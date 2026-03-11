@@ -28,15 +28,15 @@ You are an orchestrator agent. Execute tasks in the order listed below — stric
 
 The following are done manually by the user. The agent plan does not start until all items below are checked off.
 
-- [ ] **React Router v7 project initialized** — run `pnpm create react-router@latest ./ --template basic` in the repo root. When prompted, select TypeScript and include Tailwind CSS.
-- [ ] **`knowledge_data.json` moved** — copied to `app/data/knowledge_data.json`.
-- [ ] **Code formatting configured** — ESLint and Prettier installed and configured to the team's standard. A `.eslintrc.*` (or `eslint.config.*`) and `.prettierrc` exist and `pnpm lint` passes on the empty scaffold.
-- [ ] **TypeScript strict mode on** — `"strict": true` set in `tsconfig.json`.
-- [ ] **Git initialized** — `git init` done, initial commit exists with the scaffold and config files.
-- [ ] **Dependencies installed** — `pnpm add ai @ai-sdk/google` run successfully.
-- [ ] **API key configured** — `.env` exists with `GOOGLE_GENERATIVE_AI_API_KEY=<valid_key>`. `.env` is in `.gitignore`. `.env.example` exists with `GOOGLE_GENERATIVE_AI_API_KEY=replace_me`.
-- [ ] **Scaffold builds cleanly** — `pnpm build` and `pnpm lint` both pass.
-- [ ] **Boilerplate cleared** — default content removed from the index route and root stylesheet (files kept, content emptied — they will be filled by agents).
+- [x] **React Router v7 project initialized** — run `pnpm create react-router@latest ./ --template basic` in the repo root. When prompted, select TypeScript and include Tailwind CSS.
+- [x] **`knowledge_data.json` moved** — copied to `app/data/knowledge_data.json`.
+- [x] **Code formatting configured** — ESLint and Prettier installed and configured to the team's standard. A `.eslintrc.*` (or `eslint.config.*`) and `.prettierrc` exist and `pnpm lint` passes on the empty scaffold.
+- [x] **TypeScript strict mode on** — `"strict": true` set in `tsconfig.json`.
+- [x] **Git initialized** — `git init` done, initial commit exists with the scaffold and config files.
+- [x] **Dependencies installed** — `pnpm add ai @ai-sdk/google` run successfully.
+- [x] **API key configured** — `.env` exists with `GOOGLE_GENERATIVE_AI_API_KEY=<valid_key>`. `.env` is in `.gitignore`. `.env.example` exists with `GOOGLE_GENERATIVE_AI_API_KEY=replace_me`.
+- [x] **Scaffold builds cleanly** — `pnpm build` and `pnpm lint` both pass.
+- [x] **Boilerplate cleared** — default content removed from the index route and root stylesheet (files kept, content emptied — they will be filled by agents).
 
 **Once all boxes are checked, hand off to the orchestrator agent with this file.**
 

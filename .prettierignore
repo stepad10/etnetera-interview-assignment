@@ -1,0 +1,6 @@
+# Non-root .vscode folders are symlinks, which prettier can't check
+*/.vscode/
+
+# Auto-generated lockfiles
+package-lock.json
+pnpm-lock.yaml
