@@ -1,6 +1,7 @@
 import { type ActionFunctionArgs } from "react-router";
 import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
+import { openai } from "@ai-sdk/openai";
 import { getKnowledge } from "~/lib/loadKnowledge";
 import { buildSystemPrompt } from "~/lib/buildSystemPrompt";
 import {
@@ -16,7 +17,7 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   try {
-    const { messages } = await request.json();
+    const { messages, model } = await request.json();
     const latest = messages.at(-1)?.content ?? "";
 
     // Layer 2 — input sanitization
@@ -27,9 +28,14 @@ export async function action({ request }: ActionFunctionArgs) {
     const kb = getKnowledge();
     const systemPrompt = buildSystemPrompt(kb);
 
+    const aiModel =
+      model === "openai"
+        ? openai("gpt-4o-mini")
+        : google("gemini-3-flash-preview");
+
     // generateText (not streamText) so Layer 3 can inspect the full response before sending
     const { text } = await generateText({
-      model: google("gemini-3-flash-preview"),
+      model: aiModel,
       system: systemPrompt,
       messages,
     });

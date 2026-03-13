@@ -1,4 +1,14 @@
+import { useLoaderData } from "react-router";
 import ChatInterface from "~/components/ChatInterface";
+
+export async function loader() {
+  return {
+    openaiAvailable: !!process.env.OPENAI_API_KEY,
+    geminiAvailable:
+      !!process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
+      !!process.env.GEMINI_API_KEY,
+  };
+}
 
 export function meta() {
   return [
@@ -11,5 +21,6 @@ export function meta() {
 }
 
 export default function Index() {
-  return <ChatInterface />;
+  const models = useLoaderData<typeof loader>();
+  return <ChatInterface availableModels={models} />;
 }

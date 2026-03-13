@@ -7,7 +7,7 @@ A proof-of-concept AI orchestration tool acting as a company's internal develope
 - **Naive RAG (Context Stuffing)**: Directly feeds a verified internal dataset (`knowledge_data.json`) to the LLM to provide grounded, 100% accurate answers.
 - **Expert Routing**: Gracefully handles missing documentation by suggesting human experts based on their skills and availability status.
 - **3-Layer Security Guardrails**: Input injection detection, rigid system instructions, and output sanity validation to protect proprietary prompts.
-- **Provider-Agnostic AI**: Configured for Google Gemini (`gemini-2.5-flash`), but easily swappable via the AI SDK.
+- **Provider-Agnostic AI**: Configured for Google Gemini and OpenAI, but easily swappable via the AI SDK.
 - **Real-Time UI**: A sleek, dark-mode glassmorphism interface built with React and Tailwind CSS.
 
 ## Prerequisites
@@ -37,7 +37,7 @@ A proof-of-concept AI orchestration tool acting as a company's internal develope
    cp .env.example .env
    ```
 
-   Open `.env` and paste your `GOOGLE_GENERATIVE_AI_API_KEY`.
+   Open `.env` and paste your AI provider API keys.
 
 4. Start the development server:
 
